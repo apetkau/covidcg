@@ -17,7 +17,7 @@ const ClickDragBorder = styled.div`
   border-right: 1px solid black;
   cursor: col-resize;
   position: fixed;
-  right: 400px;
+  right: 1000px;
   top: 0;
   z-index: 2001;
   box-shadow: 0px 0px 63px -13px rgba(0, 0, 0, 1);
@@ -90,15 +90,15 @@ const LiteMolBlock = styled.div`
 `;
 
 const SideBar = observer(() => {
-  const [widthDelta, setWidthDelta] = useState(400);
+  const [widthDelta, setWidthDelta] = useState(1000);
   const { uiStore } = useStores();
 
   const onOpenSidebar = () => {
-    setWidthDelta(400);
+    setWidthDelta(1000);
     uiStore.setSidebarOpen();
   };
   const onCloseSidebar = () => {
-    setWidthDelta(400);
+    setWidthDelta(1000);
     uiStore.setSidebarClosed();
   };
 
@@ -121,7 +121,7 @@ const SideBar = observer(() => {
         axis="x"
         defaultClassName="DragHandle"
         defaultClassNameDragging="DragHandleActive"
-        bounds={{ top: 0, left: -600, right: 0, bottom: 0 }}
+        bounds={{ top: 0, left: 0, right: 600, bottom: 0 }}
         onDrag={(e, data) => {
           setWidthDelta(clamp(widthDelta - data.deltaX, 400, 1000));
         }}
