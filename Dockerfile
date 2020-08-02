@@ -14,3 +14,7 @@ SHELL ["conda", "run", "-n", "covid-cg", "/bin/bash", "-c"]
 # Make sure the environment is activated:
 RUN echo "Make sure pandas is installed:"
 RUN python -c "import pandas"
+
+# Copy scripts
+COPY cg_scripts .
+COPY Snakefile .
