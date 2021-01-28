@@ -3,7 +3,7 @@ sbatch --wrap="snakemake --use-conda --cluster 'sbatch --ntasks 1' --jobs 4 --co
 popd
 
 pushd workflow_main
-sbatch --wrap="snakemake --default-resources mem_mb=2048 --cluster 'sbatch --ntasks 6 --mem {resources.mem_mb}M' --jobs 12 --configfile ../config/config_custom.yaml --latency-wait 60"
+sbatch --wrap="snakemake --rerun-incomplete --default-resources mem_mb=2048 --cluster 'sbatch --ntasks 6 --mem {resources.mem_mb}M' --jobs 12 --configfile ../config/config_custom.yaml --latency-wait 60"
 popd
 
 # Data in data_custom/date_package.json.gz
