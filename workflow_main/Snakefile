@@ -99,7 +99,9 @@ rule align_sequences:
         bt2_rev2 = rules.bt2build.output.outputrev2
     params:
         bt2_index_name = bt2_index_name
-    threads: workflow.cores
+    threads: 6
+    resources:
+        mem_mb=64000
     output:
         bam = os.path.join(config["data_folder"], "bam", "{chunk}.bam")
     # bowtie2 is really memory intensive (10GB per thread), so make sure it 

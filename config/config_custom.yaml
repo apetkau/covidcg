@@ -25,7 +25,7 @@ chunk_size: 100000
 hash_accession_ids: false
 
 # SNPs with less than this number of global occurrences will be ignored
-snp_count_threshold: 3
+snp_count_threshold: 0
 # Percentage of sequences within a group (e.g., clade, lineage) that need
 # to have a SNV, in order for the SNV to be called as a "consensus" SNV
 consensus_fraction: 0.9
