@@ -64,8 +64,8 @@ def preprocess_sequences(input_file, nextstrain_exclusion_file, output_file):
                     # 2: Can't be less than 29700 NT
                     len(cur_seq) < 29700
                     or
-                    # 3: Can't have more than 20% ambiguous (N) NT
-                    num_ambiguous > math.floor(len(cur_seq) * 0.20)
+                    # 3: Can't have more than 80% ambiguous (N) NT
+                    num_ambiguous > math.floor(len(cur_seq) * 0.80)
                 ):
                     num_excluded += 1
                 else:
